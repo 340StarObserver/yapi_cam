@@ -1,6 +1,6 @@
 ### 密钥模块 数据设计 ###
 
-** 01. 账户 **
+**01. 账户**
 
 ```text
 库名 : db_auth
@@ -18,7 +18,7 @@ addTime       timestamp       ,     not null    创建时间
 modTime       timestamp       ,     not null    更新时间
 ```
 
-** 02. AppId **
+**02. AppId**
 
 ```text
 库名 : db_auth
@@ -30,7 +30,7 @@ ownerUin      bigint, unsigned,     not null    所属的uin
 appId         bigint, unsigned,     not null    AppId
 ```
 
-** 03. 用户组 **
+**03. 用户组**
 
 ```text
 库名 : db_auth
@@ -47,7 +47,7 @@ addTime       timestamp       ,     not null    创建时间
 modTime       timestamp       ,     not null    更新时间
 ```
 
-** 04. 用户和用户组的关系 **
+**04. 用户和用户组的关系**
 
 ```text
 库名 : db_auth
@@ -59,7 +59,7 @@ userUin       bigint, unsigned,     not null    用户的uin
 addTime       timestamp       ,     not null    加入时间
 ```
 
-** 05. 密钥表 **
+**05. 密钥表**
 
 ```text
 库名 : db_auth

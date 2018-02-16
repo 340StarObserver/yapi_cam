@@ -1,6 +1,6 @@
 ### 密钥模块 接口设计 ###
 
-** 01. 创建密钥 **
+**01. 创建密钥**
 
 ```text
 请求地址 : http://secret.yapi:8666/secret/interface
@@ -46,7 +46,7 @@
 //  status = 2  已删除
 ```
 
-** 02. 批量 删除/启用/禁用 密钥 **
+**02. 批量 删除/启用/禁用 密钥**
 
 ```text
 请求地址 : http://secret.yapi:8666/secret/interface
@@ -88,7 +88,7 @@
 }
 ```
 
-** 03. 修改单个密钥的备注 **
+**03. 修改单个密钥的备注**
 
 ```text
 请求地址 : http://secret.yapi:8666/secret/interface
@@ -120,7 +120,7 @@
 }
 ```
 
-** 04. 获取某人的密钥列表 **
+**04. 获取某人的密钥列表**
 
 ```text
 请求地址 : http://secret.yapi:8666/secret/interface
@@ -168,7 +168,7 @@
 //  showMode = 1, 返回中才会有secretKey字段
 ```
 
-** 05. 获取单个密钥的secretKey **
+**05. 获取单个密钥的secretKey**
 
 ```text
 请求地址 : http://secret.yapi:8666/secret/interface
