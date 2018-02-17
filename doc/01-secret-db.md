@@ -14,8 +14,8 @@ userName      varchar(255)    ,     not null    用户名字
 userRemark    text            , default null    用户备注
 userPhone     bigint, unsigned, default null    用户手机
 userEmail     varchar(255)    , default null    用户邮箱
-addTime       timestamp       ,     not null    创建时间
-modTime       timestamp       ,     not null    更新时间
+addTime       datetime        ,     not null    创建时间
+modTime       datetime        ,     not null    更新时间
 ```
 
 **02. AppId**
@@ -43,8 +43,8 @@ ownerUin      bigint, unsigned,     not null    所属的uin
 groupName     varchar(255)    ,     not null    组名字
 groupRemark   text            , default null    组备注
 groupNum      bigint, unsigned,     not null    组内用户数量
-addTime       timestamp       ,     not null    创建时间
-modTime       timestamp       ,     not null    更新时间
+addTime       datetime        ,     not null    创建时间
+modTime       datetime        ,     not null    更新时间
 ```
 
 **04. 用户和用户组的关系**
@@ -56,7 +56,7 @@ modTime       timestamp       ,     not null    更新时间
 
 groupId       bigint, unsigned,     not null    组ID
 userUin       bigint, unsigned,     not null    用户的uin
-addTime       timestamp       ,     not null    加入时间
+addTime       datetime        ,     not null    加入时间
 ```
 
 **05. 密钥表**
@@ -70,9 +70,9 @@ addTime       timestamp       ,     not null    加入时间
 secretId      char(40)  ,           not null    密钥ID
 secretKey     char(40)  ,           not null    密钥KEY
 userUin       bigint    , unsigned, not null    用户的uin
-status        tinyint(1), unsigned, not null    密钥状态
-addTime       timestamp ,           not null
-modTime       timestamp ,           not null
+status        int(11)   , unsigned, not null    密钥状态
+addTime       datetime  ,           not null
+modTime       datetime  ,           not null
 secretRemark  text      ,       default null
 
 // status = 0  启用中
