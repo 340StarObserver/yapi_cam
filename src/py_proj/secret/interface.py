@@ -45,14 +45,10 @@ def process_secret_request():
             res["returnCode"]    = conf_code.CONF_CODE["invalid_method"][0]
             res["returnMessage"] = conf_code.CONF_CODE["invalid_method"][1]
         else:
-            cgi_para = para_dict.get("interface", {})
-            cgi_para = cgi_para.get("para", {})
-
-            cgi_ret  = eval(logger_name)(para = cgi_para)
-
-            res["returnCode"]    = cgi_ret["returnCode"]
-            res["returnMessage"] = cgi_ret["returnMessage"]
-            res["data"]          = cgi_ret["data"]
+            eval(logger_name)(
+                para = para_dict.get("interface", {}).get("para", {}),
+                res  = res
+            )
 
     except KeyError, e:
         res["returnCode"]    = conf_code.CONF_CODE["para_error"][0]
