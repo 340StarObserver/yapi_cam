@@ -14,6 +14,8 @@
     "interface"     : {
         "interfaceName" : "yapi.atlas.createModule",
         "para"          : {
+            "loginUin"  : 调用者的userUin,
+            "ownerUin"  : 调用者的ownerUin,
             "module"    : "模块英文名",
             "zhName"    : "模块中文名",
             "managers"  : [ 负责人1的uin, 负责人2的uin, ... ]
@@ -54,6 +56,8 @@
     "interface"     : {
         "interfaceName" : "yapi.atlas.renameModule",
         "para"          : {
+            "loginUin"  : 调用者的userUin,
+            "ownerUin"  : 调用者的ownerUin,
             "module"    : "模块英文名",
             "zhName"    : "模块中文名"
         }
@@ -93,6 +97,8 @@
     "interface"     : {
         "interfaceName" : "yapi.atlas.getModuleList",
         "para"          : {
+            "loginUin"  : 调用者的userUin,
+            "ownerUin"  : 调用者的ownerUin,
             "pageId"    : 第几页(整数, 从1开始),
             "pageSize"  : 要几条(整数),
             "keyword"   : "关键字匹配(非必填)"
@@ -138,6 +144,8 @@
     "interface"     : {
         "interfaceName" : "yapi.atlas.getModuleDetail",
         "para"          : {
+            "loginUin"  : 调用者的userUin,
+            "ownerUin"  : 调用者的ownerUin,
             "module"    : "模块英文名"
         }
     }
@@ -176,6 +184,8 @@
     "interface"     : {
         "interfaceName" : "yapi.atlas.getModuleManagers",
         "para"          : {
+            "loginUin"  : 调用者的userUin,
+            "ownerUin"  : 调用者的ownerUin,
             "module"    : 模块英文名
         }
     }
@@ -218,6 +228,8 @@
     "interface"     : {
         "interfaceName" : "yapi.atlas.updateModuleManagers",
         "para"          : {
+            "loginUin"  : 调用者的userUin,
+            "ownerUin"  : 调用者的ownerUin,
             "module"    : 模块英文名,
             "opMode"    : 操作模式(整数, 1-增加, 2-移除),
             "managers"  : [ 用户1的uin, 用户2的uin, ... ]
@@ -261,6 +273,8 @@
     "interface"     : {
         "interfaceName" : "yapi.atlas.createModuleUrl",
         "para"          : {
+            "loginUin"  : 调用者的userUin,
+            "ownerUin"  : 调用者的ownerUin,
             "module"    : 模块英文名,
             "urlName"   : 线上地址的别名,
             "urlType"   : 地址类型(整数, 1-单地址, 2-多地址),
@@ -304,6 +318,8 @@
     "interface"     : {
         "interfaceName" : "yapi.atlas.updateModuleUrl",
         "para"          : {
+            "loginUin"  : 调用者的userUin,
+            "ownerUin"  : 调用者的ownerUin,
             "module"    : 模块英文名,
             "urlName"   : 线上地址的别名,
             "urlType"   : 地址类型,
@@ -347,6 +363,8 @@
     "interface"     : {
         "interfaceName" : "yapi.atlas.getModuleUrlList",
         "para"          : {
+            "loginUin"  : 调用者的userUin,
+            "ownerUin"  : 调用者的ownerUin,
             "pageId"    : (必填)第几页,
             "pageSize"  : (必填)要几条,
             "module"    : (必填)模块英文名,
@@ -396,6 +414,8 @@
     "interface"     : {
         "interfaceName" : "yapi.atlas.getModuleUrlDetail",
         "para"          : {
+            "loginUin"  : 调用者的userUin,
+            "ownerUin"  : 调用者的ownerUin,
             "module"    : 模块英文名,
             "urlName"   : 线上地址的别名
         }
@@ -437,6 +457,8 @@
     "interface"     : {
         "interfaceName" : "yapi.atlas.createModuleErrorCode",
         "para"          : {
+            "loginUin"     : 调用者的userUin,
+            "ownerUin"     : 调用者的ownerUin,
             "module"       : 模块英文名,
             "code"         : 错误码(整数),
             "codeDesc"     : 错误码的英文简写,
@@ -480,6 +502,8 @@
     "interface"     : {
         "interfaceName" : "yapi.atlas.deleteModuleErrorCode",
         "para"          : {
+            "loginUin"      : 调用者的userUin,
+            "ownerUin"      : 调用者的ownerUin,
             "errorCodeList" : [
                 {
                     "module": 模块英文名,
@@ -529,6 +553,8 @@
     "interface"     : {
         "interfaceName" : "yapi.atlas.updateModuleErrorCode",
         "para"          : {
+            "loginUin"     : 调用者的userUin,
+            "ownerUin"     : 调用者的ownerUin,
             "module"       : 模块英文名,
             "code"         : 错误码(整数),
             "codeDesc"     : 错误码的英文简写,
@@ -572,6 +598,8 @@
     "interface"     : {
         "interfaceName" : "yapi.atlas.getModuleErrorCodeList",
         "para"          : {
+            "loginUin"     : 调用者的userUin,
+            "ownerUin"     : 调用者的ownerUin,
             "pageId"       : (必填)第几页,
             "pageSize"     : (必填)要几条,
             "module"       : (必填)模块英文名,
@@ -621,6 +649,8 @@
     "interface"     : {
         "interfaceName" : "yapi.atlas.createAction",
         "para"          : {
+            "loginUin"      : 调用者的userUin,
+            "ownerUin"      : 调用者的ownerUin,
             "module"        : 模块英文名,
             "action"        : 接口英文名,
             "actionName"    : 接口中文名,
@@ -678,6 +708,8 @@
     "interface"     : {
         "interfaceName" : "yapi.atlas.updateAction",
         "para"          : {
+            "loginUin"      : 调用者的userUin,
+            "ownerUin"      : 调用者的ownerUin,
             "module"        : 模块英文名,
             "action"        : 接口英文名,
             "actionName"    : 接口中文名,
@@ -735,6 +767,8 @@
     "interface"     : {
         "interfaceName" : "yapi.atlas.getActionList",
         "para"          : {
+            "loginUin"     : 调用者的userUin,
+            "ownerUin"     : 调用者的ownerUin,
             "pageId"       : 第几页,
             "pageSize"     : 要几条,
             "module"       : 模块英文名,
@@ -786,6 +820,8 @@
     "interface"     : {
         "interfaceName" : "yapi.atlas.getActionDetail",
         "para"          : {
+            "loginUin"  : 调用者的userUin,
+            "ownerUin"  : 调用者的ownerUin,
             "module"    : 模块英文名,
             "action"    : 接口英文名
         }
@@ -822,7 +858,56 @@
 }
 ```
 
-**19. 查看各接口的当前频率**
+**19. 全服务列表**
+
+```text
+请求地址 : http://atlas.yapi:8666/atlas/interface
+
+请求参数 :
+{
+    "version"       : "1.0",
+    "componentName" : "yapi.atlas",
+    "eventId"       : 123456789,
+    "timestamp"     : 1445599887,
+    "interface"     : {
+        "interfaceName" : "yapi.atlas.getServiceApiList",
+        "para"          : {
+            "loginUin"  : 调用者的userUin,
+            "ownerUin"  : 调用者的ownerUin
+        }
+    }
+}
+
+返回参数 :
+{
+    "version"       : "1.0",
+    "componentName" : "yapi.atlas",
+    "eventId"       : 123456789,
+    "timestamp"     : 1445599887,
+    "returnCode"    : 0,
+    "returnMessage" : "ok",
+    "data"          : {
+        "apiList"   : [
+            {
+                "moduleEnName" : 模块英文名,
+                "moduleZhName" : 模块中文名,
+                "actionList"   : [
+                    {
+                        "actionEnName" : 接口英文名,
+                        "actionZhName" : 接口中文名
+                    },
+                    ...
+                    ...
+                ]
+            },
+            ...
+            ...
+        ]
+    }
+}
+```
+
+**20. 查看各接口的当前频率**
 
 ```text
 请求地址 : http://atlas.yapi:8666/atlas/interface
@@ -836,6 +921,8 @@
     "interface"     : {
         "interfaceName" : "yapi.atlas.getActionRate",
         "para"          : {
+            "loginUin"          : 调用者的userUin,
+            "ownerUin"          : 调用者的ownerUin,
             "pageId"            : 第几页,
             "pageSize"          : 要几条,
             "module"            : 模块英文名,
@@ -875,7 +962,7 @@
 }
 ```
 
-**20. 搜索调用日志**
+**21. 搜索调用日志**
 
 ```text
 请求地址 : http://atlas.yapi:8666/atlas/interface
@@ -929,7 +1016,7 @@
 }
 ```
 
-**21. 查看某次调用的详情日志**
+**22. 查看某次调用的详情日志**
 
 ```text
 请求地址 : http://atlas.yapi:8666/atlas/interface
