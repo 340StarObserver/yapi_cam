@@ -108,7 +108,7 @@ timeLastCall  bigint    , unsigned, not null    最近一次调用接口时间(�
 库名 : db_yapi_log
 表名 : t_action_log
 主键 : reqId
-索引 : (module, reqTime)
+索引 : (reqTime, module)
 
 reqId         varchar(255)          not null    请求ID
 reqTime       bigint, unsigned,     not null    请求时间(秒级时间戳)
