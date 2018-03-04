@@ -36,9 +36,9 @@ appId         bigint, unsigned,     not null    AppId
 库名 : db_auth
 表名 : t_group
 主键 : groupId
-索引 : ownerUin, unique(groupName)
+索引 : unique(ownerUin, groupName)
 
-groupId       bigint, unsigned,     not null    组ID
+groupId       bigint, unsigned,     not null    组ID( 自增 )
 ownerUin      bigint, unsigned,     not null    所属的uin
 groupName     varchar(255)    ,     not null    组名字
 groupRemark   text            , default null    组备注

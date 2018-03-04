@@ -22,7 +22,6 @@ app  = flask.Flask(__name__)
 path = os.path.split(os.path.realpath(__file__))[0] + os.sep
 moduleConfDict = {}
 
-
 # --------------------------------------------------
 # 读取各模块的开关配置
 #
@@ -34,8 +33,9 @@ def initConf():
 
             if config.get("module", "secret") == "true":
                 moduleConfDict["secret"] = True
-            else:
-                moduleConfDict["secret"] = False
+
+            if config.get("module", "account") == "true":
+                moduleConfDict["account"] = True
 
     except IOError, e:
         getServerlogger().exception("read module conf error")
@@ -43,7 +43,6 @@ def initConf():
     except Exception, e:
         getServerlogger().exception("init module conf error")
         exit(1)
-
 
 # --------------------------------------------------
 # 日志 : 引入各模块是否成功
@@ -60,22 +59,30 @@ def getServerlogger():
         logger.addHandler(fh)
     return logger
 
-
 # --------------------------------------------------
 # 运行
 getServerlogger().info("start server.......")
 initConf()
 
-
 # --------------------------------------------------
 # 模块 : 密钥
-if moduleConfDict.get("secret") == True:
+if moduleConfDict.get("secret", False) == True:
     from secret.interface import process_secret_request
     getServerlogger().info("import secret")
+
 @app.route("/secret/interface", methods = ["POST"])
 def deal_secret():
     return process_secret_request()
 
+# --------------------------------------------------
+# 模块 : 账号
+if moduleConfDict.get("account", False) == True:
+    from account.interface import process_account_request
+    getServerlogger().info("import account")
+
+@app.route("/account/interface", methods = ["POST"])
+def deal_account():
+    return process_account_request()
 
 if __name__ == "__main__":
     app.run(host = "0.0.0.0", port = 8666, debug = True)
