@@ -37,6 +37,9 @@ def initConf():
             if config.get("module", "account") == "true":
                 moduleConfDict["account"] = True
 
+            if config.get("module", "atlas") == "true":
+                moduleConfDict["atlas"] = True
+
     except IOError, e:
         getServerlogger().exception("read module conf error")
         exit(1)
@@ -83,6 +86,16 @@ if moduleConfDict.get("account", False) == True:
 @app.route("/account/interface", methods = ["POST"])
 def deal_account():
     return process_account_request()
+
+# --------------------------------------------------
+# 模块 : API Manager
+if moduleConfDict.get("atlas", False) == True:
+    from atlas.interface import process_atlas_request
+    getServerlogger().info("import atlas")
+
+@app.route("/atlas/interface", methods = ["POST"])
+def deal_atlas():
+    return process_atlas_request()
 
 if __name__ == "__main__":
     app.run(host = "0.0.0.0", port = 8666, debug = True)

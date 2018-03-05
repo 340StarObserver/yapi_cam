@@ -1,0 +1,79 @@
+# -*- coding: utf-8 -*-
+
+import json
+import flask
+import traceback
+
+from atlas.conf   import conf_code
+from atlas.conf   import conf_common
+from atlas.conf   import conf_method
+from atlas.common import global_tool
+
+from atlas.cgi.cgi_module        import *
+from atlas.cgi.cgi_moduleManager import *
+from atlas.cgi.cgi_moduleUrl     import *
+from atlas.cgi.cgi_moduleCode    import *
+from atlas.cgi.cgi_action        import *
+from atlas.cgi.cgi_log           import *
+
+def process_atlas_request():
+    # 1. get request parameters
+    para_str  = flask.request.get_data()
+    para_dict = json.loads(para_str)
+
+    # 2. get logger
+    if "interface" in para_dict and "interfaceName" in para_dict["interface"] and para_dict["interface"]["interfaceName"] in conf_method.CONF_METHOD:
+        logger_name = conf_method.CONF_METHOD[para_dict["interface"]["interfaceName"]]
+    else:
+        logger_name = "error_method"
+
+    logger = global_tool.get_logger(logger_name)
+    logger.debug('-------------------- process beg --------------------')
+
+    if conf_common.CONF_LOG["save_request"] is True:
+        logger.debug("request : %s" % (para_str))
+
+    # 3. init respond struct
+    res = {
+        "version"       : para_dict.get("version"      , "1.0"),
+        "componentName" : para_dict.get("componentName", "yapi.atlas"),
+        "eventId"       : para_dict.get("eventId"      , global_tool.create_eventid()),
+        "timestamp"     : para_dict.get("timestamp"    , global_tool.create_timestamp()),
+        "returnCode"    : conf_code.CONF_CODE["success"][0],
+        "returnMessage" : conf_code.CONF_CODE["success"][1],
+        "data"          : {}
+    }
+
+    # 4. process
+    try:
+        if logger_name == "error_method":
+            res["returnCode"]    = conf_code.CONF_CODE["invalid_method"][0]
+            res["returnMessage"] = conf_code.CONF_CODE["invalid_method"][1]
+        else:
+            eval(logger_name)(
+                para = para_dict.get("interface", {}).get("para", {}),
+                res  = res
+            )
+
+    except KeyError, e:
+        res["returnCode"]    = conf_code.CONF_CODE["para_error"][0]
+        res["returnMessage"] = traceback.format_exc()
+    except ValueError, e:
+        res["returnCode"]    = conf_code.CONF_CODE["para_error"][0]
+        res["returnMessage"] = traceback.format_exc()
+    except NameError, e:
+        res["returnCode"]    = conf_code.CONF_CODE["invalid_method"][0]
+        res["returnMessage"] = traceback.format_exc()
+    except Exception, e:
+        res["returnCode"]    = conf_code.CONF_CODE["unknown"][0]
+        res["returnMessage"] = traceback.format_exc()
+
+    # 5. write log
+    if conf_common.CONF_LOG["save_respond"] is True:
+        logger.debug("respond : %s" % (json.dumps(res)))
+
+    logger.debug('-------------------- process end --------------------')
+    logger.debug('')
+
+    # 6. return
+    return flask.jsonify(res)

@@ -1,0 +1,16 @@
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+    "version"       : "1.0",
+    "componentName" : "yapi.atlas",
+    "eventId"       : 123456789,
+    "timestamp"     : 1445599887,
+    "interface"     : {
+        "interfaceName" : "yapi.atlas.createModule",
+        "para"          : {
+        	"loginUin"  : 909619752,
+            "ownerUin"  : 909619400,
+            "module"    : "vpc",
+            "zhName"    : "私有网络",
+            "managers"  : [ 909619752, 909619772 ]
+        }
+    }
+}'
