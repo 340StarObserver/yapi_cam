@@ -99,9 +99,9 @@
         "para"          : {
             "loginUin"  : 调用者的userUin,
             "ownerUin"  : 调用者的ownerUin,
-            "pageId"    : 第几页(整数, 从1开始),
-            "pageSize"  : 要几条(整数),
-            "keyword"   : "关键字匹配(非必填)"
+            "pageId"    : (可选)第几页(整数, 从1开始),
+            "pageSize"  : (可选)要几条(整数),
+            "keyword"   : (可选)关键字匹配
         }
     }
 }
@@ -365,11 +365,11 @@
         "para"          : {
             "loginUin"  : 调用者的userUin,
             "ownerUin"  : 调用者的ownerUin,
-            "pageId"    : (必填)第几页,
-            "pageSize"  : (必填)要几条,
             "module"    : (必填)模块英文名,
             "urlName"   : (选填)按线上地址的别名进行模糊匹配的关键词,
-            "urlType"   : (选填)地址类型(整数, 不填-全部, 0-全部, 1-单地址, 2-多地址)
+            "urlType"   : (选填)地址类型(整数, 不填-全部, 0-全部, 1-单地址, 2-多地址),
+            "pageId"    : (选填)第几页,
+            "pageSize"  : (选填)要几条
         }
     }
 }
@@ -600,12 +600,12 @@
         "para"          : {
             "loginUin"     : 调用者的userUin,
             "ownerUin"     : 调用者的ownerUin,
-            "pageId"       : (必填)第几页,
-            "pageSize"     : (必填)要几条,
             "module"       : (必填)模块英文名,
             "code"         : (选填)指定错误码(整数),
             "showSvrError" : (选填)是否展示后端错误信息(整数, 不填-全部, 0-不展示, 1-展示),
-            "keyword"      : (选填)关键字匹配
+            "keyword"      : (选填)关键字匹配,
+            "pageId"       : (选填)第几页,
+            "pageSize"     : (选填)要几条
         }
     }
 }
@@ -769,13 +769,13 @@
         "para"          : {
             "loginUin"     : 调用者的userUin,
             "ownerUin"     : 调用者的ownerUin,
-            "pageId"       : 第几页,
-            "pageSize"     : 要几条,
             "module"       : 模块英文名,
             "action"       : (选填)根据接口英文名进行模糊匹配,
             "actionName"   : (选填)根据接口中文名进行模糊匹配,
             "urlName"      : (选填)根据线上地址的别名进行模糊匹配,
-            "modTimeRange" : (选填)根据更新时间范围进行筛选(格式形如 "2018-01-01:2018-02-01")
+            "modTimeRange" : (选填)根据更新时间范围进行筛选(格式形如 "2018-01-01:2018-02-01"),
+            "pageId"       : (选填)第几页,
+            "pageSize"     : (选填)要几条
         }
     }
 }
@@ -923,14 +923,14 @@
         "para"          : {
             "loginUin"          : 调用者的userUin,
             "ownerUin"          : 调用者的ownerUin,
-            "pageId"            : 第几页,
-            "pageSize"          : 要几条,
             "module"            : 模块英文名,
             "action"            : (选填)接口英文名,
             "isRate"            : (选填)是否限制频次(整数, 不填-全部, 0-不限制, 1-限制),
             "hasExceed"         : (选填)是否超过限制(整数, 不填-全部, 0-未超过, 1-超过),
             "minRateRange"      : (选填)限制频次范围     (形如 ":100" 或 "100:" 或 "100:200"),
-            "curFrequencyRange" : (选填)这分钟内累计几次了(形如 ":100" 或 "100:" 或 "100:200")
+            "curFrequencyRange" : (选填)这分钟内累计几次了(形如 ":100" 或 "100:" 或 "100:200"),
+            "pageId"            : (选填)第几页,
+            "pageSize"          : (选填)要几条
         }
     }
 }
@@ -976,15 +976,15 @@
     "interface"     : {
         "interfaceName" : "yapi.atlas.getActionLogList",
         "para"          : {
-            "pageId"     : 第几页,
-            "pageSize"   : 要几条,
             "module"     : 模块英文名,
             "action"     : (选填)接口英文名,
             "reqTime"    : (选填)请求时间范围(形如 "2018-01-01:2018-02-01"),
             "reqIp"      : (选填)请求源IP,
             "reqRegion"  : (选填)请求区域,
             "userUin"    : (选填)调用方的uin,
-            "returnCode" : (选填)错误码
+            "returnCode" : (选填)错误码,
+            "pageId"     : (选填)第几页,
+            "pageSize"   : (选填)要几条
         }
     }
 }
