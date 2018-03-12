@@ -21,7 +21,9 @@ DB_ENGINE_API = create_engine(
         conf_common.CONF_DB_API["dbname"],
         conf_common.CONF_DB_API["encode"]
     ),
-    pool_recycle = conf_common.CONF_DB_API["recycle"]
+    pool_recycle  = conf_common.CONF_DB_API["recycle"],
+    pool_size     = conf_common.CONF_DB_API["size"],
+    pool_pre_ping = True
 )
 
 DB_SESSION_API = scoped_session(
@@ -48,7 +50,9 @@ DB_ENGINE_LOG = create_engine(
         conf_common.CONF_DB_LOG["dbname"],
         conf_common.CONF_DB_LOG["encode"]
     ),
-    pool_recycle = conf_common.CONF_DB_LOG["recycle"]
+    pool_recycle  = conf_common.CONF_DB_LOG["recycle"],
+    pool_size     = conf_common.CONF_DB_LOG["size"],
+    pool_pre_ping = True
 )
 
 DB_SESSION_LOG = scoped_session(

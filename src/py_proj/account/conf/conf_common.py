@@ -21,5 +21,6 @@ CONF_DB_AUTH = {
     "pass"    : "mysql_passwd",
     "dbname"  : "db_auth",
     "encode"  : "utf8",
-    "recycle" : 3600
+    "recycle" : 3600,
+    "size"    : 10
 }

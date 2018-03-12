@@ -19,7 +19,9 @@ DB_ENGINE_AUTH  = create_engine(
         conf_common.CONF_DB_AUTH["dbname"],
         conf_common.CONF_DB_AUTH["encode"]
     ),
-    pool_recycle = conf_common.CONF_DB_AUTH["recycle"]
+    pool_recycle  = conf_common.CONF_DB_AUTH["recycle"],
+    pool_size     = conf_common.CONF_DB_AUTH["size"],
+    pool_pre_ping = True
 )
 
 DB_SESSION_AUTH = scoped_session(

@@ -21,7 +21,8 @@ CONF_DB_API = {
     "pass"    : "mysql_passwd",
     "dbname"  : "db_yapi_data",
     "encode"  : "utf8",
-    "recycle" : 3600
+    "recycle" : 3600,
+    "size"    : 10
 }
 
 CONF_DB_LOG = {
@@ -31,7 +32,8 @@ CONF_DB_LOG = {
     "pass"    : "mysql_passwd",
     "dbname"  : "db_yapi_log",
     "encode"  : "utf8",
-    "recycle" : 3600
+    "recycle" : 3600,
+    "size"    : 10
 }
 
 # ----------------------------------------
