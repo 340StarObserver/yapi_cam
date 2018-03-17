@@ -248,6 +248,7 @@
     "data"          : {
         "batchRes"  : [
             {
+                "module"    : 模块英文名,
                 "userUin"   : 某个用户的uin,
                 "opCode"    : 是否成功(整数, 0-成功, 反之失败),
                 "opMessage" : 失败原因

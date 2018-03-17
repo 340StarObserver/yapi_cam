@@ -86,11 +86,11 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface
     "interface"     : {
         "interfaceName" : "yapi.atlas.updateModuleManagers",
         "para"          : {
-            "loginUin"  : 909619772,
+            "loginUin"  : 909619752,
             "ownerUin"  : 909619400,
             "module"    : "vpc",
-            "opMode"    : 1,
-            "managers"  : []
+            "opMode"    : 2,
+            "managers"  : [909619401, 909619781]
         }
     }
 }'
