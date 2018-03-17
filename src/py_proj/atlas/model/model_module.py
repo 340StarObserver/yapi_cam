@@ -81,13 +81,15 @@ class TableAtlasModuleCode(global_db.DB_BASE_API):
     module       = Column(String(255), nullable = False, primary_key = True)
     code         = Column(Integer    , nullable = False, primary_key = True)
     showSvrError = Column(Integer    , nullable = False)
+    codeType     = Column(Integer    , nullable = False)
     codeDesc     = Column(String(255), nullable = False)
     message      = Column(Text       , nullable = False)
 
-    def __init__(self, module, code, showSvrError, codeDesc, message):
+    def __init__(self, module, code, showSvrError, codeType, codeDesc, message):
         self.module       = module
         self.code         = code
         self.showSvrError = showSvrError
+        self.codeType     = codeType
         self.codeDesc     = codeDesc
         self.message      = message
 
@@ -96,6 +98,7 @@ class TableAtlasModuleCode(global_db.DB_BASE_API):
             "module"       : self.module,
             "code"         : self.code,
             "showSvrError" : self.showSvrError,
+            "codeType"     : self.codeType,
             "codeDesc"     : self.codeDesc,
             "message"      : self.message
         }

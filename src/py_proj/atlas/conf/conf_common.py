@@ -22,7 +22,7 @@ CONF_DB_API = {
     "dbname"  : "db_yapi_data",
     "encode"  : "utf8",
     "recycle" : 3600,
-    "size"    : 10
+    "size"    : 5
 }
 
 CONF_DB_LOG = {
@@ -33,7 +33,7 @@ CONF_DB_LOG = {
     "dbname"  : "db_yapi_log",
     "encode"  : "utf8",
     "recycle" : 3600,
-    "size"    : 10
+    "size"    : 5
 }
 
 # ----------------------------------------

@@ -461,6 +461,7 @@
             "ownerUin"     : 调用者的ownerUin,
             "module"       : 模块英文名,
             "code"         : 错误码(整数),
+            "codeType"     : 错误大类(整数),
             "codeDesc"     : 错误码的英文简写,
             "showSvrError" : 是否展示后端错误信息(整数, 0-否, 1-是),
             "message"      : 错误信息
@@ -480,6 +481,7 @@
         "errorCodeDetail" : {
             "module"       : 模块英文名,
             "code"         : 错误码(整数),
+            "codeType"     : 错误大类(整数),
             "codeDesc"     : 错误码的英文简写,
             "showSvrError" : 是否展示后端错误信息(整数, 0-否, 1-是),
             "message"      : 错误信息
@@ -557,6 +559,7 @@
             "ownerUin"     : 调用者的ownerUin,
             "module"       : 模块英文名,
             "code"         : 错误码(整数),
+            "codeType"     : 错误大类(整数),
             "codeDesc"     : 错误码的英文简写,
             "showSvrError" : 是否展示后端错误信息(整数, 0-否, 1-是),
             "message"      : 错误信息
@@ -576,6 +579,7 @@
         "errorCodeDetail" : {
             "module"       : 模块英文名,
             "code"         : 错误码(整数),
+            "codeType"     : 错误大类(整数),
             "codeDesc"     : 错误码的英文简写,
             "showSvrError" : 是否展示后端错误信息(整数, 0-否, 1-是),
             "message"      : 错误信息
@@ -602,6 +606,7 @@
             "ownerUin"     : 调用者的ownerUin,
             "module"       : (必填)模块英文名,
             "code"         : (选填)指定错误码(整数),
+            "codeType"     : (选填)错误大类(整数),
             "showSvrError" : (选填)是否展示后端错误信息(整数, 不填-全部, 0-不展示, 1-展示),
             "keyword"      : (选填)关键字匹配,
             "pageId"       : (选填)第几页,
@@ -624,6 +629,7 @@
             {
                 "module"       : 模块英文名,
                 "code"         : 错误码(整数),
+                "codeType"     : 错误大类(整数),
                 "codeDesc"     : 错误码的英文简写,
                 "showSvrError" : 是否展示后端错误信息(整数, 0-否, 1-是),
                 "message"      : 错误信息

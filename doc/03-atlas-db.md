@@ -53,17 +53,18 @@ modTime       datetime              not null    更新时间
 module        varchar(255)          not null    模块英文名
 code          int(11)   , unsigned, not null    错误码数字
 showSvrError  int(11)   , unsigned, not null    是否展示后端错误信息
+codeType      int(11)   , unsigned, not null    错误大类
 codeDesc      varchar(255)          not null    错误码英文简写
 message       text                  not null    错误码详细信息
 
-// 关于 showSvrError 的作用 :
-// 
-// DB中配置好了一条错误码是 ("vpc", 1001, 0, "Invalid.IpAddress", "非法IP地址")
-// 后端vpc服务的返回是     (1001, "xxx")
-// 则云API返回给调用方的错误信息是 "(1001)(非法IP地址)"
-
-// 
-// 若将 showSvrError 改为 1, 则最终的返回是 "(1001)(非法IP地址)(xxx)"
+// codeType :
+// 3000  后端返回格式错误
+// 4000  用户错误
+// 4100  频次超限
+// 4200  签名密钥不存在
+// 4300  签名过期
+// 4400  签名错误
+// 4500  权限不足
 ```
 
 **05. 接口**

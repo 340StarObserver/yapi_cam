@@ -62,3 +62,35 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface
         }
     }
 }'
+
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+    "version"       : "1.0",
+    "componentName" : "yapi.atlas",
+    "eventId"       : 123456789,
+    "timestamp"     : 1445599887,
+    "interface"     : {
+        "interfaceName" : "yapi.atlas.getModuleManagers",
+        "para"          : {
+            "loginUin"  : 909619772,
+            "ownerUin"  : 909619400,
+            "module"    : "dfw"
+        }
+    }
+}'
+
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+    "version"       : "1.0",
+    "componentName" : "yapi.atlas",
+    "eventId"       : 123456789,
+    "timestamp"     : 1445599887,
+    "interface"     : {
+        "interfaceName" : "yapi.atlas.updateModuleManagers",
+        "para"          : {
+            "loginUin"  : 909619772,
+            "ownerUin"  : 909619400,
+            "module"    : "vpc",
+            "opMode"    : 1,
+            "managers"  : []
+        }
+    }
+}'

@@ -22,5 +22,5 @@ CONF_DB_AUTH = {
     "dbname"  : "db_auth",
     "encode"  : "utf8",
     "recycle" : 3600,
-    "size"    : 10
+    "size"    : 5
 }
