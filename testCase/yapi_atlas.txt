@@ -94,3 +94,72 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface
         }
     }
 }'
+
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+    "version"       : "1.0",
+    "componentName" : "yapi.atlas",
+    "eventId"       : 123456789,
+    "timestamp"     : 1445599887,
+    "interface"     : {
+        "interfaceName" : "yapi.atlas.createModuleUrl",
+        "para"          : {
+            "loginUin"  : 909619752,
+            "ownerUin"  : 909619400,
+            "module"    : "dfw",
+            "urlName"   : "dfw_oss",
+            "urlType"   : 1,
+            "urlAddress": "http://oss.dfw/v3/index.php"
+        }
+    }
+}'
+
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+    "version"       : "1.0",
+    "componentName" : "yapi.atlas",
+    "eventId"       : 123456789,
+    "timestamp"     : 1445599887,
+    "interface"     : {
+        "interfaceName" : "yapi.atlas.updateModuleUrl",
+        "para"          : {
+            "loginUin"  : 909619752,
+            "ownerUin"  : 909619400,
+            "module"    : "vpc",
+            "urlName"   : "私有网络OSS",
+            "urlType"   : 1,
+            "urlAddress": "http://127.0.0.1:8666/v2/index.php"
+        }
+    }
+}'
+
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+    "version"       : "1.0",
+    "componentName" : "yapi.atlas",
+    "eventId"       : 123456789,
+    "timestamp"     : 1445599887,
+    "interface"     : {
+        "interfaceName" : "yapi.atlas.getModuleUrlList",
+        "para"          : {
+            "loginUin"  : 909619752,
+            "ownerUin"  : 909619400,
+            "module"    : "vpc",
+            "pageId"    : 1,
+            "pageSize"  : 2
+        }
+    }
+}'
+
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+    "version"       : "1.0",
+    "componentName" : "yapi.atlas",
+    "eventId"       : 123456789,
+    "timestamp"     : 1445599887,
+    "interface"     : {
+        "interfaceName" : "yapi.atlas.getModuleUrlDetail",
+        "para"          : {
+            "loginUin"  : 909619752,
+            "ownerUin"  : 909619400,
+            "module"    : "vpc",
+            "urlName"   : "私有网络OSS"
+        }
+    }
+}'

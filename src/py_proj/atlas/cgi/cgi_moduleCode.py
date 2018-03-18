@@ -6,9 +6,10 @@ import traceback
 
 from sqlalchemy import or_
 
-from atlas.conf   import conf_code
-from atlas.common import global_db
-from atlas.common import global_tool
+from atlas.conf.conf_code     import *
+from atlas.common.global_db   import *
+from atlas.common.global_call import *
+from atlas.common.global_tool import *
 
 from atlas.model.model_module import TableAtlasModule
 from atlas.model.model_module import TableAtlasModuleCode

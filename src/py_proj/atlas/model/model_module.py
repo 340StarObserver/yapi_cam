@@ -70,8 +70,8 @@ class TableAtlasModuleUrl(global_db.DB_BASE_API):
             "urlName"    : self.urlName,
             "urlType"    : self.urlType,
             "urlAddress" : self.urlAddress,
-            "addTime"    : self.addTime,
-            "modTime"    : self.modTime
+            "addTime"    : str(self.addTime),
+            "modTime"    : str(self.modTime)
         }
 
 
