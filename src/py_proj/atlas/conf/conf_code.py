@@ -32,7 +32,8 @@ CONF_CODE = {
     "duplicate_module_action"  : ( 1206, "duplicate module action"                 ),
     "mode_manager"             : ( 1301, "opMode can only be 1-add or 2-remove"    ),
     "mode_urlType"             : ( 1302, "urlType can only be 1-single or 2-multi" ),
-    "mode_showSvrError"        : ( 1303, "showSvrError can only be 0-no or 1-yes"  ),
-    "mode_isAuth"              : ( 1304, "isAuth can only be 0-no or 1-yes"        ),
-    "mode_isRate"              : ( 1305, "isRate can only be 0-no or 1-yes"        )
+    "mode_codeType"            : ( 1303, "unsupported error code type"             ),
+    "mode_showSvrError"        : ( 1304, "showSvrError can only be 0-no or 1-yes"  ),
+    "mode_isAuth"              : ( 1305, "isAuth can only be 0-no or 1-yes"        ),
+    "mode_isRate"              : ( 1306, "isRate can only be 0-no or 1-yes"        )
 }

@@ -163,3 +163,94 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface
         }
     }
 }'
+
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+    "version"       : "1.0",
+    "componentName" : "yapi.atlas",
+    "eventId"       : 123456789,
+    "timestamp"     : 1445599887,
+    "interface"     : {
+        "interfaceName" : "yapi.atlas.createModuleErrorCode",
+        "para"          : {
+            "loginUin"  : 909619752,
+            "ownerUin"  : 909619400,
+            "module"    : "vpc",
+            "code"      : 109,
+            "codeType"  : 4000,
+            "codeDesc"  : "Invalid.Route.Rule",
+            "message"   : "route rule is invalid",
+            "showSvrError" : 0
+        }
+    }
+}'
+
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+    "version"       : "1.0",
+    "componentName" : "yapi.atlas",
+    "eventId"       : 123456789,
+    "timestamp"     : 1445599887,
+    "interface"     : {
+        "interfaceName" : "yapi.atlas.updateModuleErrorCode",
+        "para"          : {
+            "loginUin"  : 909619752,
+            "ownerUin"  : 909619400,
+            "module"    : "vpc",
+            "code"      : 1205,
+            "codeType"  : 5000,
+            "codeDesc"  : "Failed.Peer.Connection",
+            "message"   : "exception when creating a peer connection",
+            "showSvrError" : 1
+        }
+    }
+}'
+
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+    "version"       : "1.0",
+    "componentName" : "yapi.atlas",
+    "eventId"       : 123456789,
+    "timestamp"     : 1445599887,
+    "interface"     : {
+        "interfaceName" : "yapi.atlas.deleteModuleErrorCode",
+        "para"          : {
+            "loginUin"  : 909619781,
+            "ownerUin"  : 909619400,
+            "errorCodeList"  : [
+                {
+                    "module" : "",
+                    "code"   : 1205
+                },
+                {
+                    "module" : "atlas",
+                    "code"   : 1205
+                },
+                {
+                    "module" : "vpc",
+                    "code"   : 1205
+                },
+                {
+                    "module" : "dfw",
+                    "code"   : 1201
+                },
+                {
+                    "module" : "dfw",
+                    "code"   : 1205
+                }
+            ]
+        }
+    }
+}'
+
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+    "version"       : "1.0",
+    "componentName" : "yapi.atlas",
+    "eventId"       : 123456789,
+    "timestamp"     : 1445599887,
+    "interface"     : {
+        "interfaceName" : "yapi.atlas.getModuleErrorCodeList",
+        "para"          : {
+            "loginUin"  : 909619752,
+            "ownerUin"  : 909619400,
+            "module"    : "vpc"
+        }
+    }
+}'
