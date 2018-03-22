@@ -1,0 +1,12 @@
+if isinstance(rspData, dict) and "returnCode" in rspData and "returnMessage" in rspData:
+    rspData = {
+        "code"    : rspData["returnCode"],
+        "message" : rspData["returnMessage"],
+        "data"    : rspData.get("data", {})
+    }
+else:
+    rspData = {
+        "code"    : 3000,
+        "message" : "illegal response",
+        "data"    : {}
+    }

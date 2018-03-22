@@ -254,3 +254,88 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface
         }
     }
 }'
+
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+    "version"       : "1.0",
+    "componentName" : "yapi.atlas",
+    "eventId"       : 123456789,
+    "timestamp"     : 1445599887,
+    "interface"     : {
+        "interfaceName" : "yapi.atlas.createAction",
+        "para"          : {
+            "loginUin"  : 909619752,
+            "ownerUin"  : 909619400,
+            "module"    : "vpc",
+            "action"    : "GetGw",
+            "actionName": "获取网关列表",
+            "urlName"   : "vpc.k8s.mc.py",
+            "isAuth"    : 1,
+            "isRate"    : 1,
+            "minRate"   : 120
+        }
+    }
+}'
+
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+    "version"       : "1.0",
+    "componentName" : "yapi.atlas",
+    "eventId"       : 123456789,
+    "timestamp"     : 1445599887,
+    "interface"     : {
+        "interfaceName" : "yapi.atlas.updateAction",
+        "para"          : {
+            "loginUin"  : 909619752,
+            "ownerUin"  : 909619400,
+            "module"    : "cbs",
+            "action"    : "ListBucket",
+            "actionName": "获取存储桶列表",
+            "urlName"   : "云硬盘OSS",
+            "isAuth"    : 1,
+            "isRate"    : 1,
+            "minRate"   : 80
+        }
+    }
+}'
+
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+    "version"       : "1.0",
+    "componentName" : "yapi.atlas",
+    "eventId"       : 123456789,
+    "timestamp"     : 1445599887,
+    "interface"     : {
+        "interfaceName" : "yapi.atlas.getActionList",
+        "para"          : {
+            "loginUin"  : 909619752,
+            "ownerUin"  : 909619400,
+            "module"    : "vpc",
+            "modTimeRange" : "2018-03-20:2018-03-23"
+        }
+    }
+}'
+
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+    "version"       : "1.0",
+    "componentName" : "yapi.atlas",
+    "eventId"       : 123456789,
+    "timestamp"     : 1445599887,
+    "interface"     : {
+        "interfaceName" : "yapi.atlas.getActionDetail",
+        "para"          : {
+            "loginUin"  : 909619752,
+            "ownerUin"  : 909619400,
+            "module"    : "cbs",
+            "action"    : "ListBucket"
+        }
+    }
+}'
+
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+    "version"       : "1.0",
+    "componentName" : "yapi.atlas",
+    "eventId"       : 123456789,
+    "timestamp"     : 1445599887,
+    "interface"     : {
+        "interfaceName" : "yapi.atlas.getServiceApiList",
+        "para"          : {}
+    }
+}'

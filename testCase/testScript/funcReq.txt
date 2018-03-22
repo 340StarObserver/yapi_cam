@@ -1,0 +1,14 @@
+paramDict["loginUin"] = int(paramDict["loginUin"])
+paramDict["ownerUin"] = int(paramDict["ownerUin"])
+paramDict["appId"]    = int(paramDict["appId"])
+
+paramDict = {
+    "version"       : "1.0",
+    "componentName" : "cloud.vpc",
+    "eventId"       : int(paramDict["timestamp"]),
+    "timestamp"     : int(paramDict["timestamp"]),
+    "interface"     : {
+        "interfaceName" : "cloud.vpc.addRoute",
+        "para"          : paramDict
+    }
+}
