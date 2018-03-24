@@ -17,6 +17,7 @@ CONF_CODE = {
     "invalid_urlName"          : ( 1005, "no such module online address"           ),
     "invalid_errorCode"        : ( 1006, "no such module error code"               ),
     "invalid_action"           : ( 1007, "no such module action"                   ),
+    "invalid_log"              : ( 1008, "no such audit log"                       ),
     "empty_module_enName"      : ( 1101, "module enName can not be empty"          ),
     "empty_module_zhName"      : ( 1102, "module zhName can not be empty"          ),
     "empty_module_managers"    : ( 1103, "module managers can not be empty"        ),

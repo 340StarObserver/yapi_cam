@@ -932,15 +932,17 @@
             "ownerUin"          : 调用者的ownerUin,
             "module"            : 模块英文名,
             "action"            : (选填)接口英文名,
-            "isRate"            : (选填)是否限制频次(整数, 不填-全部, 0-不限制, 1-限制),
-            "hasExceed"         : (选填)是否超过限制(整数, 不填-全部, 0-未超过, 1-超过),
-            "minRateRange"      : (选填)限制频次范围     (形如 ":100" 或 "100:" 或 "100:200"),
-            "curFrequencyRange" : (选填)这分钟内累计几次了(形如 ":100" 或 "100:" 或 "100:200"),
+            "rateMode"          : (选填)频次筛选模式,
             "pageId"            : (选填)第几页,
             "pageSize"          : (选填)要几条
         }
     }
 }
+
+rateMode = 0  所有
+rateMode = 1  不限制频次的
+rateMode = 2  限制频次，且未超限制的
+rateMode = 3  限制频次，且已超限制的
 
 返回参数 :
 {
@@ -983,15 +985,15 @@
     "interface"     : {
         "interfaceName" : "yapi.atlas.getActionLogList",
         "para"          : {
-            "module"     : 模块英文名,
+            "pageId"     : 第几页,
+            "pageSize"   : 要几条,
+            "reqTime"    : 请求时间范围(形如 "2018-01-01:2018-02-01"),
+            "module"     : (选填)模块英文名,
             "action"     : (选填)接口英文名,
-            "reqTime"    : (选填)请求时间范围(形如 "2018-01-01:2018-02-01"),
             "reqIp"      : (选填)请求源IP,
             "reqRegion"  : (选填)请求区域,
             "userUin"    : (选填)调用方的uin,
-            "returnCode" : (选填)错误码,
-            "pageId"     : (选填)第几页,
-            "pageSize"   : (选填)要几条
+            "returnCode" : (选填)错误码
         }
     }
 }
@@ -1010,7 +1012,7 @@
                 "reqId"      : 请求ID,
                 "reqTime"    : 请求时间,
                 "reqIp"      : 请求源IP,
-                "regRegion"  : 请求区域,
+                "reqRegion"  : 请求区域,
                 "module"     : 模块英文名,
                 "action"     : 接口英文名,
                 "userUin"    : 调用方的uin,
