@@ -1,0 +1,233 @@
+curl -w '\ncost : %{time_total} s\n' -XPOST http://grant.yapi/grant/interface -d '{
+    "version"       : "1.0",
+    "componentName" : "yapi.grant",
+    "eventId"       : 123456789,
+    "timestamp"     : 1445599887,
+    "interface"     : {
+        "interfaceName" : "yapi.grant.getConditionOpList",
+        "para"          : {
+            "loginUin"  : 909619752,
+            "ownerUin"  : 909619400
+        }
+    }
+}'
+
+curl -w '\ncost : %{time_total} s\n' -XPOST http://grant.yapi/grant/interface -d '{
+    "version"       : "1.0",
+    "componentName" : "yapi.grant",
+    "eventId"       : 123456789,
+    "timestamp"     : 1445599887,
+    "interface"     : {
+        "interfaceName" : "yapi.grant.createStrategy",
+        "para"          : {
+            "loginUin"       : 909619752,
+            "ownerUin"       : 909619400,
+            "strategyType"   : 0,
+            "strategyName"   : "test-policy-01",
+            "strategyRemark" : "",
+            "strategyRule"   : [
+                {
+                    "effect"    : "allow",
+                    "action"    : [ "cbs:ListBucketObjects" ],
+                    "resource"  : [
+                        "yapi:gz:cbs:bucketId/aaa",
+                        "yapi:gz:cbs:bucketId/bbb"
+                    ],
+                    "condition" : [
+                        {
+                            "condKey"   : "customLabel",
+                            "condType"  : "oneIn",
+                            "condValue" : [ "labelA", "labelB", "labelC" ]
+                        }
+                    ]
+                },
+                {
+                    "effect"    : "deny",
+                    "action"    : [ "lb:*" ],
+                    "resource"  : [ "*" ],
+                    "condition" : [ "*" ]
+                }
+            ]
+        }
+    }
+}'
+
+curl -w '\ncost : %{time_total} s\n' -XPOST http://grant.yapi/grant/interface -d '{
+    "version"       : "1.0",
+    "componentName" : "yapi.grant",
+    "eventId"       : 123456789,
+    "timestamp"     : 1445599887,
+    "interface"     : {
+        "interfaceName" : "yapi.grant.updateStrategy",
+        "para"          : {
+            "loginUin"       : 909619752,
+            "ownerUin"       : 909619400,
+            "strategyId"     : 1,
+            "strategyType"   : 0,
+            "strategyName"   : "test-policy-01",
+            "strategyRemark" : "",
+            "strategyRule"   : [
+                {
+                    "effect"    : "allow",
+                    "action"    : [ "cbs:ListBucketObjects" ],
+                    "resource"  : [
+                        "yapi:gz:cbs:bucketId/aaa",
+                        "yapi:gz:cbs:bucketId/bbb"
+                    ],
+                    "condition" : [
+                        {
+                            "condKey"   : "customLabel",
+                            "condType"  : "oneIn",
+                            "condValue" : [ "labelA", "labelB", "labelC" ]
+                        }
+                    ]
+                },
+                {
+                    "effect"    : "deny",
+                    "action"    : [ "lb:*" ],
+                    "resource"  : [ "*" ],
+                    "condition" : [ "*" ]
+                }
+            ]
+        }
+    }
+}'
+
+curl -w '\ncost : %{time_total} s\n' -XPOST http://grant.yapi/grant/interface -d '{
+    "version"       : "1.0",
+    "componentName" : "yapi.grant",
+    "eventId"       : 123456789,
+    "timestamp"     : 1445599887,
+    "interface"     : {
+        "interfaceName" : "yapi.grant.deleteStrategy",
+        "para"          : {
+            "loginUin"       : 909619752,
+            "ownerUin"       : 909619400,
+            "strategyIdList" : [ 2, 3, 4 ]
+        }
+    }
+}'
+
+curl -w '\ncost : %{time_total} s\n' -XPOST http://grant.yapi/grant/interface -d '{
+    "version"       : "1.0",
+    "componentName" : "yapi.grant",
+    "eventId"       : 123456789,
+    "timestamp"     : 1445599887,
+    "interface"     : {
+        "interfaceName" : "yapi.grant.getStrategyDetail",
+        "para"          : {
+            "loginUin"  : 909619752,
+            "ownerUin"  : 909619400,
+            "strategyId": 1
+        }
+    }
+}'
+
+curl -w '\ncost : %{time_total} s\n' -XPOST http://grant.yapi/grant/interface -d '{
+    "version"       : "1.0",
+    "componentName" : "yapi.grant",
+    "eventId"       : 123456789,
+    "timestamp"     : 1445599887,
+    "interface"     : {
+        "interfaceName" : "yapi.grant.bindUserStrategy",
+        "para"          : {
+            "loginUin"  : 909619752,
+            "ownerUin"  : 909619400,
+            "bindMode"  : 1,
+            "bindList"  : [
+                {
+                    "strategyId" : 12,
+                    "userUin"    : 909619752
+                },
+                {
+                    "strategyId" : 3,
+                    "userUin"    : 909619752
+                },
+                {
+                    "strategyId" : 10,
+                    "userUin"    : 909619759
+                },
+                {
+                    "strategyId" : 10,
+                    "userUin"    : 909620639
+                },
+                {
+                    "strategyId" : 10,
+                    "userUin"    : 909619752
+                }
+            ]
+        }
+    }
+}'
+
+curl -w '\ncost : %{time_total} s\n' -XPOST http://grant.yapi/grant/interface -d '{
+    "version"       : "1.0",
+    "componentName" : "yapi.grant",
+    "eventId"       : 123456789,
+    "timestamp"     : 1445599887,
+    "interface"     : {
+        "interfaceName" : "yapi.grant.bindGroupStrategy",
+        "para"          : {
+            "loginUin"  : 909619752,
+            "ownerUin"  : 909619400,
+            "bindMode"  : 1,
+            "bindList"  : [
+                {
+                    "strategyId" : 12,
+                    "groupId"    : 1
+                },
+                {
+                    "strategyId" : 3,
+                    "groupId"    : 2
+                },
+                {
+                    "strategyId" : 10,
+                    "groupId"    : 8
+                },
+                {
+                    "strategyId" : 10,
+                    "groupId"    : 5
+                },
+                {
+                    "strategyId" : 10,
+                    "groupId"    : 1
+                }
+            ]
+        }
+    }
+}'
+
+curl -w '\ncost : %{time_total} s\n' -XPOST http://grant.yapi/grant/interface -d '{
+    "version"       : "1.0",
+    "componentName" : "yapi.grant",
+    "eventId"       : 123456789,
+    "timestamp"     : 1445599887,
+    "interface"     : {
+        "interfaceName" : "yapi.grant.getStrategyRelated",
+        "para"          : {
+            "loginUin"     : 909619752,
+            "ownerUin"     : 909619400,
+            "strategyId"   : 10,
+            "relatedUser"  : 1,
+            "relatedGroup" : 1
+        }
+    }
+}'
+
+curl -w '\ncost : %{time_total} s\n' -XPOST http://grant.yapi/grant/interface -d '{
+    "version"       : "1.0",
+    "componentName" : "yapi.grant",
+    "eventId"       : 123456789,
+    "timestamp"     : 1445599887,
+    "interface"     : {
+        "interfaceName" : "yapi.grant.getStrategyList",
+        "para"          : {
+            "loginUin"     : 909619752,
+            "ownerUin"     : 909619400,
+            "strategyType" : 0,
+            "strategyName" : "",
+            "userUin"      : 909619752,
+            "groupId"      : 2
+        }
+    }
+}'

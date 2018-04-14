@@ -39,5 +39,5 @@ CONF_DB_LOG = {
 # ----------------------------------------
 # About call other services
 CONF_URL = {
-    "getUserDetail" : "http://account.yapi:8666/account/interface"
+    "getUserDetail" : "http://account.yapi/account/interface"
 }

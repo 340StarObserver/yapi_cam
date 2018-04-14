@@ -21,7 +21,7 @@ def readFile(fileName):
     f.close()
     return d
 
-reqUrl  = "http://atlas.yapi:8666/atlas/interface"
+reqUrl  = "http://atlas.yapi/atlas/interface"
 
 reqData = {
     "version"       : "1.0",

@@ -3,7 +3,7 @@
 **01. 创建模块**
 
 ```text
-请求地址 : http://atlas.yapi:8666/atlas/interface
+请求地址 : http://atlas.yapi/atlas/interface
 
 请求参数 :
 {
@@ -45,7 +45,7 @@
 **02. 修改模块的中文备注名**
 
 ```text
-请求地址 : http://atlas.yapi:8666/atlas/interface
+请求地址 : http://atlas.yapi/atlas/interface
 
 请求参数 :
 {
@@ -86,7 +86,7 @@
 **03. 查询模块列表**
 
 ```text
-请求地址 : http://atlas.yapi:8666/atlas/interface
+请求地址 : http://atlas.yapi/atlas/interface
 
 请求参数 :
 {
@@ -133,7 +133,7 @@
 **04. 查询单个模块的基本详情**
 
 ```text
-请求地址 : http://atlas.yapi:8666/atlas/interface
+请求地址 : http://atlas.yapi/atlas/interface
 
 请求参数 :
 {
@@ -173,7 +173,7 @@
 **05. 查询单个模块的负责人列表**
 
 ```text
-请求地址 : http://atlas.yapi:8666/atlas/interface
+请求地址 : http://atlas.yapi/atlas/interface
 
 请求参数 :
 {
@@ -217,7 +217,7 @@
 **06. 为单个模块增加/删除若干个负责人**
 
 ```text
-请求地址 : http://atlas.yapi:8666/atlas/interface
+请求地址 : http://atlas.yapi/atlas/interface
 
 请求参数 :
 {
@@ -263,7 +263,7 @@
 **07. 创建线上地址**
 
 ```text
-请求地址 : http://atlas.yapi:8666/atlas/interface
+请求地址 : http://atlas.yapi/atlas/interface
 
 请求参数 :
 {
@@ -308,7 +308,7 @@
 **08. 修改线上地址**
 
 ```text
-请求地址 : http://atlas.yapi:8666/atlas/interface
+请求地址 : http://atlas.yapi/atlas/interface
 
 请求参数 :
 {
@@ -353,7 +353,7 @@
 **09. 查询某个模块下的线上地址**
 
 ```text
-请求地址 : http://atlas.yapi:8666/atlas/interface
+请求地址 : http://atlas.yapi/atlas/interface
 
 请求参数 :
 {
@@ -404,7 +404,7 @@
 **10. 查询单个线上地址的详情**
 
 ```text
-请求地址 : http://atlas.yapi:8666/atlas/interface
+请求地址 : http://atlas.yapi/atlas/interface
 
 请求参数 :
 {
@@ -447,7 +447,7 @@
 **11. 创建模块错误码**
 
 ```text
-请求地址 : http://atlas.yapi:8666/atlas/interface
+请求地址 : http://atlas.yapi/atlas/interface
 
 请求参数 :
 {
@@ -494,7 +494,7 @@
 **12. 删除模块错误码**
 
 ```text
-请求地址 : http://atlas.yapi:8666/atlas/interface
+请求地址 : http://atlas.yapi/atlas/interface
 
 请求参数 :
 {
@@ -545,7 +545,7 @@
 **13. 修改模块错误码**
 
 ```text
-请求地址 : http://atlas.yapi:8666/atlas/interface
+请求地址 : http://atlas.yapi/atlas/interface
 
 请求参数 :
 {
@@ -592,7 +592,7 @@
 **14. 查询某个模块下的错误码**
 
 ```text
-请求地址 : http://atlas.yapi:8666/atlas/interface
+请求地址 : http://atlas.yapi/atlas/interface
 
 请求参数 :
 {
@@ -645,7 +645,7 @@
 **15. 创建接口**
 
 ```text
-请求地址 : http://atlas.yapi:8666/atlas/interface
+请求地址 : http://atlas.yapi/atlas/interface
 
 请求参数 :
 {
@@ -704,7 +704,7 @@
 **16. 修改接口**
 
 ```text
-请求地址 : http://atlas.yapi:8666/atlas/interface
+请求地址 : http://atlas.yapi/atlas/interface
 
 请求参数 :
 {
@@ -763,7 +763,7 @@
 **17. 查询接口列表**
 
 ```text
-请求地址 : http://atlas.yapi:8666/atlas/interface
+请求地址 : http://atlas.yapi/atlas/interface
 
 请求参数 :
 {
@@ -816,7 +816,7 @@
 **18. 查询单个接口的详情**
 
 ```text
-请求地址 : http://atlas.yapi:8666/atlas/interface
+请求地址 : http://atlas.yapi/atlas/interface
 
 请求参数 :
 {
@@ -868,7 +868,7 @@
 **19. 全服务列表**
 
 ```text
-请求地址 : http://atlas.yapi:8666/atlas/interface
+请求地址 : http://atlas.yapi/atlas/interface
 
 请求参数 :
 {
@@ -917,7 +917,7 @@
 **20. 查看各接口的当前频率**
 
 ```text
-请求地址 : http://atlas.yapi:8666/atlas/interface
+请求地址 : http://atlas.yapi/atlas/interface
 
 请求参数 :
 {
@@ -974,7 +974,7 @@ rateMode = 3  限制频次，且已超限制的
 **21. 搜索调用日志**
 
 ```text
-请求地址 : http://atlas.yapi:8666/atlas/interface
+请求地址 : http://atlas.yapi/atlas/interface
 
 请求参数 :
 {
@@ -1028,7 +1028,7 @@ rateMode = 3  限制频次，且已超限制的
 **22. 查看某次调用的详情日志**
 
 ```text
-请求地址 : http://atlas.yapi:8666/atlas/interface
+请求地址 : http://atlas.yapi/atlas/interface
 
 请求参数 :
 {

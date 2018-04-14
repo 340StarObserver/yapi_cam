@@ -3,7 +3,7 @@
 **01. 批量查询账户详情**
 
 ```text
-请求地址 : http://account.yapi:8666/account/interface
+请求地址 : http://account.yapi/account/interface
 
 请求参数 :
 {
@@ -52,7 +52,7 @@
 **02. 子账户列表**
 
 ```text
-请求地址 : http://account.yapi:8666/account/interface
+请求地址 : http://account.yapi/account/interface
 
 请求参数 :
 {
@@ -103,7 +103,7 @@
 **03. 创建用户组**
 
 ```text
-请求地址 : http://account.yapi:8666/account/interface
+请求地址 : http://account.yapi/account/interface
 
 请求参数 :
 {
@@ -147,7 +147,7 @@
 **04. 编辑用户组基本信息**
 
 ```text
-请求地址 : http://account.yapi:8666/account/interface
+请求地址 : http://account.yapi/account/interface
 
 请求参数 :
 {
@@ -192,7 +192,7 @@
 **05. 批量绑定/解绑用户和用户组**
 
 ```text
-请求地址 : http://account.yapi:8666/account/interface
+请求地址 : http://account.yapi/account/interface
 
 请求参数 :
 {
@@ -244,7 +244,7 @@
 **06. 批量删除用户组**
 
 ```text
-请求地址 : http://account.yapi:8666/account/interface
+请求地址 : http://account.yapi/account/interface
 
 请求参数 :
 {
@@ -287,7 +287,7 @@
 **07. 当前租户下的用户组列表**
 
 ```text
-请求地址 : http://account.yapi:8666/account/interface
+请求地址 : http://account.yapi/account/interface
 
 请求参数 :
 {
@@ -338,7 +338,7 @@
 **08. 查看某个用户组内的成员**
 
 ```text
-请求地址 : http://account.yapi:8666/account/interface
+请求地址 : http://account.yapi/account/interface
 
 请求参数 :
 {

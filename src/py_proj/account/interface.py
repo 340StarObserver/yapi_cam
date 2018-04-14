@@ -63,13 +63,15 @@ def process_account_request():
     except Exception, e:
         res["returnCode"]    = conf_code.CONF_CODE["unknown"][0]
         res["returnMessage"] = traceback.format_exc()
+    finally:
+        res = json.dumps(res).encode("utf-8")
 
     # 5. write log
     if conf_common.CONF_LOG["save_respond"] is True:
-        logger.debug("respond : %s" % (json.dumps(res)))
+        logger.debug("respond : %s" % (res))
 
     logger.debug('-------------------- process end --------------------')
     logger.debug('')
 
     # 6. return
-    return flask.jsonify(res)
+    return res

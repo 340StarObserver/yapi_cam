@@ -39,7 +39,7 @@ urlAddress    text                  not null    url地址
 addTime       datetime              not null    创建时间
 modTime       datetime              not null    更新时间
 
-// urlType = 1  单地址类型, urlAddress 形如 http://secret.yapi:8666/secret/interface
+// urlType = 1  单地址类型, urlAddress 形如 http://secret.yapi/secret/interface
 // urlType = 2  多地址类型, urlAddress 是一段python代码, 根据请求参数决定转发地址
 ```
 

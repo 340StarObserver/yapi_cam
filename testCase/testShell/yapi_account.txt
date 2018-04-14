@@ -1,4 +1,4 @@
-curl -w 'cost : %{time_total} s\n' -XPOST http://account.yapi:8666/account/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://account.yapi/account/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.account",
     "eventId"       : 123456789,
@@ -11,7 +11,7 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://account.yapi:8666/account/inter
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://account.yapi:8666/account/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://account.yapi/account/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.account",
     "eventId"       : 123456789,
@@ -27,7 +27,7 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://account.yapi:8666/account/inter
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://account.yapi:8666/account/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://account.yapi/account/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.account",
     "eventId"       : 123456789,
@@ -43,7 +43,7 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://account.yapi:8666/account/inter
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://account.yapi:8666/account/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://account.yapi/account/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.account",
     "eventId"       : 123456789,
@@ -60,7 +60,7 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://account.yapi:8666/account/inter
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://account.yapi:8666/account/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://account.yapi/account/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.account",
     "eventId"       : 123456789,
@@ -85,7 +85,7 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://account.yapi:8666/account/inter
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://account.yapi:8666/account/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://account.yapi/account/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.account",
     "eventId"       : 123456789,
@@ -100,7 +100,7 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://account.yapi:8666/account/inter
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://account.yapi:8666/account/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://account.yapi/account/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.account",
     "eventId"       : 123456789,
@@ -115,7 +115,7 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://account.yapi:8666/account/inter
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://account.yapi:8666/account/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://account.yapi/account/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.account",
     "eventId"       : 123456789,

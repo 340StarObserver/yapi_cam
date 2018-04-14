@@ -13,7 +13,7 @@ ownerUin          bigint  unsigned    not null    所属租户的根账号
 strategyType      int(11) unsigned    not null    策略类型
 strategyName      varchar(255)        not null    策略名字
 strategyRemark    text            default null    策略备注
-strategtRule      text                not null    策略规则
+strategyRule      text                not null    策略规则
 
 关于策略类型 :
 0 : 普通类型
@@ -43,8 +43,8 @@ strategtRule      text                not null    策略规则
     {
         "effect"    : "deny",
         "action"    : [ "lb:*" ],
-        "resource"  : "*",
-        "condition" : "*"
+        "resource"  : [ "*" ],
+        "condition" : [ "*" ]
     }
 ]
 ```
@@ -67,6 +67,8 @@ strategtRule      text                not null    策略规则
 库名 : db_auth
 表名 : r_related_strategy
 主键 : (strategyId, userUin, groupId)
+索引 : userUin
+索引 : groupId
 
 strategyId        bigint  unsigned    not null    策略编号
 userUin           bigint  unsigned    not null    子账号
@@ -81,7 +83,7 @@ groupId           bigint  unsinged    not null    用户组编号
 **01. 策略规则中支持的条件运算符**
 
 ```text
-请求地址 : http://grant.yapi:8666/grant/interface
+请求地址 : http://grant.yapi/grant/interface
 
 请求参数 :
 {
@@ -122,7 +124,7 @@ groupId           bigint  unsinged    not null    用户组编号
 **02. 创建策略**
 
 ```text
-请求地址 : http://grant.yapi:8666/grant/interface
+请求地址 : http://grant.yapi/grant/interface
 
 请求参数 :
 {
@@ -167,7 +169,7 @@ groupId           bigint  unsinged    not null    用户组编号
 **03. 更新策略**
 
 ```text
-请求地址 : http://grant.yapi:8666/grant/interface
+请求地址 : http://grant.yapi/grant/interface
 
 请求参数 :
 {
@@ -213,7 +215,7 @@ groupId           bigint  unsinged    not null    用户组编号
 **04. 批量删除策略**
 
 ```text
-请求地址 : http://grant.yapi:8666/grant/interface
+请求地址 : http://grant.yapi/grant/interface
 
 请求参数 :
 {
@@ -254,7 +256,7 @@ groupId           bigint  unsinged    not null    用户组编号
 **05. 查询单个策略的详情**
 
 ```text
-请求地址 : http://grant.yapi:8666/grant/interface
+请求地址 : http://grant.yapi/grant/interface
 
 请求参数 :
 {
@@ -296,7 +298,7 @@ groupId           bigint  unsinged    not null    用户组编号
 **06. 查看单个策略所关联的用户和用户组**
 
 ```text
-请求地址 : http://grant.yapi:8666/grant/interface
+请求地址 : http://grant.yapi/grant/interface
 
 请求参数 :
 {
@@ -307,12 +309,17 @@ groupId           bigint  unsinged    not null    用户组编号
     "interface"     : {
         "interfaceName" : "yapi.grant.getStrategyRelated",
         "para"          : {
-            "loginUin"  : 调用者的userUin,
-            "ownerUin"  : 调用者的ownerUin,
-            "strategyId": 策略编号
+            "loginUin"     : 调用者的userUin,
+            "ownerUin"     : 调用者的ownerUin,
+            "strategyId"   : 策略编号,
+            "relatedUser"  : 是否返回关联的用户( 整数, 0-否, 1-是 ),
+            "relatedGroup" : 是否返回关联的用户组( 整数, 0-否, 1-是 )
         }
     }
 }
+
+relatedUser  = 1, 返回中 userList  才存在
+relatedGroup = 1, 返回中 groupList 才存在
 
 返回参数 :
 {
@@ -349,7 +356,7 @@ groupId           bigint  unsinged    not null    用户组编号
 **07. 查询策略列表**
 
 ```text
-请求地址 : http://grant.yapi:8666/grant/interface
+请求地址 : http://grant.yapi/grant/interface
 
 请求参数 :
 {
@@ -400,7 +407,7 @@ groupId           bigint  unsinged    not null    用户组编号
 **08. 批量 绑定/解绑 用户和策略**
 
 ```text
-请求地址 : http://grant.yapi:8666/grant/interface
+请求地址 : http://grant.yapi/grant/interface
 
 请求参数 :
 {
@@ -450,7 +457,7 @@ groupId           bigint  unsinged    not null    用户组编号
 **09. 批量 绑定/解绑 用户组和策略**
 
 ```text
-请求地址 : http://grant.yapi:8666/grant/interface
+请求地址 : http://grant.yapi/grant/interface
 
 请求参数 :
 {

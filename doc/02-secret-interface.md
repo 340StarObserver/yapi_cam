@@ -3,7 +3,7 @@
 **01. 创建密钥**
 
 ```text
-请求地址 : http://secret.yapi:8666/secret/interface
+请求地址 : http://secret.yapi/secret/interface
 
 请求参数 :
 {
@@ -49,7 +49,7 @@
 **02. 批量 删除/启用/禁用 密钥**
 
 ```text
-请求地址 : http://secret.yapi:8666/secret/interface
+请求地址 : http://secret.yapi/secret/interface
 
 请求参数 :
 {
@@ -91,7 +91,7 @@
 **03. 修改单个密钥的备注**
 
 ```text
-请求地址 : http://secret.yapi:8666/secret/interface
+请求地址 : http://secret.yapi/secret/interface
 
 请求参数 :
 {
@@ -123,7 +123,7 @@
 **04. 获取某人的密钥列表**
 
 ```text
-请求地址 : http://secret.yapi:8666/secret/interface
+请求地址 : http://secret.yapi/secret/interface
 
 请求参数 :
 {
@@ -171,7 +171,7 @@
 **05. 获取单个密钥的secretKey**
 
 ```text
-请求地址 : http://secret.yapi:8666/secret/interface
+请求地址 : http://secret.yapi/secret/interface
 
 请求参数 :
 {

@@ -1,4 +1,4 @@
-curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi/atlas/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.atlas",
     "eventId"       : 123456789,
@@ -15,7 +15,7 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi/atlas/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.atlas",
     "eventId"       : 123456789,
@@ -31,7 +31,7 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi/atlas/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.atlas",
     "eventId"       : 123456789,
@@ -48,7 +48,7 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi/atlas/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.atlas",
     "eventId"       : 123456789,
@@ -63,7 +63,7 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi/atlas/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.atlas",
     "eventId"       : 123456789,
@@ -78,7 +78,7 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi/atlas/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.atlas",
     "eventId"       : 123456789,
@@ -95,7 +95,7 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi/atlas/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.atlas",
     "eventId"       : 123456789,
@@ -113,7 +113,7 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi/atlas/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.atlas",
     "eventId"       : 123456789,
@@ -126,12 +126,12 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface
             "module"    : "vpc",
             "urlName"   : "私有网络OSS",
             "urlType"   : 1,
-            "urlAddress": "http://127.0.0.1:8666/v2/index.php"
+            "urlAddress": "http://127.0.0.1/v2/index.php"
         }
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi/atlas/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.atlas",
     "eventId"       : 123456789,
@@ -148,7 +148,7 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi/atlas/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.atlas",
     "eventId"       : 123456789,
@@ -164,7 +164,7 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi/atlas/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.atlas",
     "eventId"       : 123456789,
@@ -184,7 +184,7 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi/atlas/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.atlas",
     "eventId"       : 123456789,
@@ -204,7 +204,7 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi/atlas/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.atlas",
     "eventId"       : 123456789,
@@ -240,7 +240,7 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi/atlas/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.atlas",
     "eventId"       : 123456789,
@@ -255,7 +255,7 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi/atlas/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.atlas",
     "eventId"       : 123456789,
@@ -276,7 +276,7 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi/atlas/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.atlas",
     "eventId"       : 123456789,
@@ -297,7 +297,7 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi/atlas/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.atlas",
     "eventId"       : 123456789,
@@ -313,7 +313,7 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi/atlas/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.atlas",
     "eventId"       : 123456789,
@@ -329,7 +329,7 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi/atlas/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.atlas",
     "eventId"       : 123456789,
@@ -340,7 +340,7 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi/atlas/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.atlas",
     "eventId"       : 123456789,
@@ -356,7 +356,7 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi/atlas/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.atlas",
     "eventId"       : 123456789,
@@ -371,7 +371,7 @@ curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface
     }
 }'
 
-curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi:8666/atlas/interface -d '{
+curl -w 'cost : %{time_total} s\n' -XPOST http://atlas.yapi/atlas/interface -d '{
     "version"       : "1.0",
     "componentName" : "yapi.atlas",
     "eventId"       : 123456789,

@@ -40,6 +40,9 @@ def initConf():
             if config.get("module", "atlas") == "true":
                 moduleConfDict["atlas"] = True
 
+            if config.get("module", "grant") == "true":
+                moduleConfDict["grant"] = True
+
     except IOError, e:
         getServerlogger().exception("read module conf error")
         exit(1)
@@ -97,5 +100,15 @@ if moduleConfDict.get("atlas", False) == True:
 def deal_atlas():
     return process_atlas_request()
 
+# --------------------------------------------------
+# 模块 : 授权
+if moduleConfDict.get("grant", False) == True:
+    from grant.interface import process_grant_request
+    getServerlogger().info("import grant")
+
+@app.route("/grant/interface", methods = ["POST"])
+def deal_grant():
+    return process_grant_request()
+
 if __name__ == "__main__":
-    app.run(host = "0.0.0.0", port = 8666, debug = True)
+    app.run(host = "0.0.0.0", port = 8666, debug = False)
