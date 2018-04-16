@@ -53,6 +53,7 @@ modTime       datetime        ,     not null    更新时间
 库名 : db_auth
 表名 : r_user_group
 主键 : (groupId, userUin)
+索引 : userUin
 
 groupId       bigint, unsigned,     not null    组ID
 userUin       bigint, unsigned,     not null    用户的uin
