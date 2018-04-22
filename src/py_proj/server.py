@@ -43,6 +43,9 @@ def initConf():
             if config.get("module", "grant") == "true":
                 moduleConfDict["grant"] = True
 
+            if config.get("module", "swoole") == "true":
+                moduleConfDict["swoole"] = True
+
     except IOError, e:
         getServerlogger().exception("read module conf error")
         exit(1)
@@ -109,6 +112,16 @@ if moduleConfDict.get("grant", False) == True:
 @app.route("/grant/interface", methods = ["POST"])
 def deal_grant():
     return process_grant_request()
+
+# --------------------------------------------------
+# 模块 : 鉴权
+if moduleConfDict.get("swoole", False) == True:
+    from swoole.interface import process_swoole_request
+    getServerlogger().info("import swoole")
+
+@app.route("/swoole/interface", methods = ["POST"])
+def deal_swoole():
+    return process_swoole_request()
 
 if __name__ == "__main__":
     app.run(host = "0.0.0.0", port = 8666, debug = False)
