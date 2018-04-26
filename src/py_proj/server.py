@@ -46,6 +46,9 @@ def initConf():
             if config.get("module", "swoole") == "true":
                 moduleConfDict["swoole"] = True
 
+            if config.get("module", "cloud") == "true":
+                moduleConfDict["cloud"] = True
+
     except IOError, e:
         getServerlogger().exception("read module conf error")
         exit(1)
@@ -122,6 +125,16 @@ if moduleConfDict.get("swoole", False) == True:
 @app.route("/swoole/interface", methods = ["POST"])
 def deal_swoole():
     return process_swoole_request()
+
+# --------------------------------------------------
+# 模块 : 接入
+if moduleConfDict.get("cloud", False) == True:
+    from cloud.interface import process_cloud_request
+    getServerlogger().info("import cloud")
+
+@app.route("/cloud/interface", methods = ["POST"])
+def deal_cloud():
+    return process_cloud_request()
 
 if __name__ == "__main__":
     app.run(host = "0.0.0.0", port = 8666, debug = False)

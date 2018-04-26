@@ -23,8 +23,8 @@ DB_ENGINE_AUTH = create_engine(
 
 DB_SESSION_AUTH = scoped_session(
     sessionmaker(
-        autocommit = False,
-        autoflush  = False,
+        autocommit = True,
+        autoflush  = True,
         bind       = DB_ENGINE_AUTH
     )
 )
