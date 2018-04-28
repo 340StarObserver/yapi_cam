@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: account
+  namespace: yapi
+spec:
+  clusterIP: 192.168.192.206
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    module: yapi
+    app: server

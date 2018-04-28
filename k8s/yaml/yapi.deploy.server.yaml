@@ -1,0 +1,150 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: yapi-deploy-server
+  namespace: yapi
+spec:
+  replicas: 3
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        module: yapi
+        app: server
+        tier: access
+    spec:
+      containers:
+      - name: yapi-server-container
+        image: mydocker.io:5000/yapi-server:v1.0
+        volumeMounts:
+        - name: volume-centos-cgroup
+          mountPath: /sys/fs/cgroup
+          readOnly: true
+        - name: volume-zoneinfo
+          mountPath: /etc/localtime
+          readOnly: true
+        - name: volume-supervisord-confd
+          mountPath: /etc/supervisord.d
+          readOnly: true
+        - name: volume-server-conf
+          mountPath: /data/config
+          readOnly: true
+        - name: volume-nginx-log
+          mountPath: /data/nginx/log
+        - name: volume-yapi-account-log
+          mountPath: /data/release/log/yapi/account
+        - name: volume-yapi-secret-log
+          mountPath: /data/release/log/yapi/secret
+        - name: volume-yapi-atlas-log
+          mountPath: /data/release/log/yapi/atlas
+        - name: volume-yapi-grant-log
+          mountPath: /data/release/log/yapi/grant
+        - name: volume-yapi-swoole-log
+          mountPath: /data/release/log/yapi/swoole
+        - name: volume-yapi-cloud-log
+          mountPath: /data/release/log/yapi/cloud
+
+        resources:
+          requests:
+            cpu: 1000m
+            memory: 1000Mi
+          limits:
+            cpu: 2000m
+            memory: 4000Mi
+        ports:
+        - containerPort: 80
+        readinessProbe:
+          exec:
+            command:
+            - bash
+            - /data/server_health.sh
+          initialDelaySeconds: 20
+          periodSeconds: 5
+          timeoutSeconds: 3
+          successThreshold: 1
+          failureThreshold: 5
+        livenessProbe:
+          exec:
+            command:
+            - bash
+            - /data/server_health.sh
+          initialDelaySeconds: 20
+          periodSeconds: 5
+          timeoutSeconds: 5
+          successThreshold: 1
+          failureThreshold: 3
+      volumes:
+        - name: volume-centos-cgroup
+          hostPath:
+            path: /sys/fs/cgroup
+        - name: volume-zoneinfo
+          hostPath:
+            path: /etc/localtime
+        - name: volume-supervisord-confd
+          configMap:
+            name: yapi.cm.supervisord
+            items:
+            - key: supervisord.server.ini
+              path: supervisord.server.ini
+        - name: volume-nginx-log
+          hostPath:
+            path: /data/k8s/log/yapi/yapi.deploy.server/nginx
+        - name: volume-yapi-account-log
+          hostPath:
+            path: /data/k8s/log/yapi/yapi.deploy.server/account
+        - name: volume-yapi-secret-log
+          hostPath:
+            path: /data/k8s/log/yapi/yapi.deploy.server/secret
+        - name: volume-yapi-atlas-log
+          hostPath:
+            path: /data/k8s/log/yapi/yapi.deploy.server/atlas
+        - name: volume-yapi-grant-log
+          hostPath:
+            path: /data/k8s/log/yapi/yapi.deploy.server/grant
+        - name: volume-yapi-swoole-log
+          hostPath:
+            path: /data/k8s/log/yapi/yapi.deploy.server/swoole
+        - name: volume-yapi-cloud-log
+          hostPath:
+            path: /data/k8s/log/yapi/yapi.deploy.server/cloud
+        - name: volume-server-conf
+          configMap:
+            name: yapi.cm.server
+            items:
+            - key: nginx.conf
+              path: yapi/server/nginx.conf
+            - key: module_conf.ini
+              path: yapi/server/module_conf.ini
+            - key: uwsgi_py_web.ini
+              path: yapi/server/uwsgi_py_web.ini
+            - key: account_conf_code.py
+              path: yapi/server/account_conf_code.py
+            - key: account_conf_common.py
+              path: yapi/server/account_conf_common.py
+            - key: account_conf_method.py
+              path: yapi/server/account_conf_method.py
+            - key: atlas_conf_code.py
+              path: yapi/server/atlas_conf_code.py
+            - key: atlas_conf_common.py
+              path: yapi/server/atlas_conf_common.py
+            - key: atlas_conf_method.py
+              path: yapi/server/atlas_conf_method.py
+            - key: grant_conf_base.py
+              path: yapi/server/grant_conf_base.py
+            - key: grant_conf_code.py
+              path: yapi/server/grant_conf_code.py
+            - key: grant_conf_method.py
+              path: yapi/server/grant_conf_method.py
+            - key: secret_conf_code.py
+              path: yapi/server/secret_conf_code.py
+            - key: secret_conf_common.py
+              path: yapi/server/secret_conf_common.py
+            - key: secret_conf_method.py
+              path: yapi/server/secret_conf_method.py
+            - key: swoole_config.py
+              path: yapi/server/swoole_config.py
+            - key: cloud_config.py
+              path: yapi/server/cloud_config.py

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: atlas
+  namespace: yapi
+spec:
+  clusterIP: 192.168.192.67
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    module: yapi
+    app: server
