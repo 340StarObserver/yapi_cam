@@ -10,7 +10,8 @@ import urllib2
 
 class OpenApi(object):
     def __init__(self, secretId, secretKey, module, action, region, params):
-        self._url  = "http://cloud.yapi/cloud/interface"
+        # self._url  = "http://cloud.yapi/cloud/interface"
+        self._url  = "http://cloud.pr.fsphere.cn/cloud/interface"
 
         self._data = {
             "module"    : module,

@@ -49,21 +49,17 @@ def get_logger(f_name):
 
 
 def get_client_ip():
-    default_ip = "127.0.0.1"
-    client_ip  = default_ip
-
+    ip = "127.0.0.1"
+    
     try:
-        client_ip = flask.request.remote_addr
+        if "X-Forwarded-For" in flask.request.headers:
+            ip = flask.request.headers["X-Forwarded-For"].split(",")[0]
+        else:
+            ip = flask.request.remote_addr
     except:
         pass
 
-    if client_ip == default_ip:
-        try:
-            client_ip = flask.request.headers.get("X-Forwarded-For", default_ip).split(",")[0]
-        except:
-            pass
-
-    return client_ip
+    return ip
 
 
 def create_request_id(post_data_str):
